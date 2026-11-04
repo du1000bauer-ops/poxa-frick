@@ -32,3 +32,10 @@
 
 
 Ajuste pedido em 4 nov. 2026 concluído: rosas agora flutuam em ciclos de 10–12 s; correntes oscilam em 13–15 s; coroa em 7 s; corações pulsam em 4,5 s; órbita muda o brilho em 6 s; livros e estrelas têm movimento ambiental ligeiramente mais ativo. Verificado no DOM do Preview, incluindo a regra prefers-reduced-motion.
+
+
+## 6. Deploy Vercel com os mesmos visuais e interações — [ ]
+- Na versão publicada na Vercel, preservar a composição, os textos, os seis destinos de links, os ícones, as animações e os layouts desktop/mobile existentes neste projeto.
+- Incluir no repositório GitHub cópias estáticas das três artes geradas atualmente referenciadas por `/manus-storage/` (cenário literário, rosa esmeralda e coroa) e atualizar somente os caminhos para que o deploy externo não dependa do armazenamento Manus.
+- Usar o build estático existente (`pnpm build:static`, saída `dist/public`) e publicar o projeto Vercel a partir da branch `main` do repositório `du1000bauer-ops/poxa-frick`.
+- A versão entregue deve carregar as artes, manter os seis links funcionando e preservar animações e o suporte a `prefers-reduced-motion`.
