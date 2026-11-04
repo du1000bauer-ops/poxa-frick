@@ -15,6 +15,7 @@
 ## 3. Movimento ambiente sutil — [x]
 - A página deve parecer viva, mas elegante: rosas e elementos decorativos com flutuação muito sutil; correntes com movimento quase imperceptível; brilhos verdes que aparecem e desaparecem lentamente; coroa com leve animação de flutuação; órbita verde com pulsação luminosa; coração com pulsação suave; pequenas partículas luminosas no fundo; botões com transições suaves ao passar o mouse; efeito de fumaça verde muito discreto no fundo.
 - Evitar animações exageradas, efeitos piscantes ou excesso de partículas. Respeitar prefers-reduced-motion integralmente.
+- Ajuste solicitado em 4 nov. 2026: deixar a movimentação um pouco mais perceptível, sem perder a sutileza e sem distrair.
 
 ## 4. Tipografia, responsividade e acessibilidade — [x]
 - Utilizar Bodoni Moda para o nome POXA FRICK, Cormorant Garamond para textos e botões e Allura para frases manuscritas e elementos caligráficos.
@@ -24,6 +25,10 @@
 ## 5. SEO, carregamento e integridade visual — [x]
 - Otimizar carregamento, SEO e acessibilidade; evitar elementos gigantes, espaços vazios desnecessários e sobreposições.
 - Antes de considerar o projeto concluído, visualizar o site em desktop e celular; conferir se os seis botões aparecem; conferir se as imagens carregam; verificar se não existem elementos sobrepostos ou cortados; corrigir qualquer problema visual encontrado.
+
 ## Evidências da entrega
 
-`pnpm check` e `pnpm build:static` passaram. O HTML de produção contém os seis destinos exatos, abertura segura em nova aba e textos disponíveis sem JavaScript. Capturas desktop em 1536 × 1024, notebook em 1280 × 800 e mobile em 390 × 844 conferidas; sobreposição da frase direita corrigida e notebook compactado para preservar rodapé na primeira dobra. Na prévia pública, as quatro imagens decorativas estão carregadas e os seis links estão presentes. O símbolo Live Pix foi extraído de https://static.livepix.gg/images/logo-white.svg e reproduzido monocromaticamente. Os recursos rasterizados foram gerados separadamente e os controles são HTML real. Canonical e og:url não são inventados: aguardar domínio público configurado pela publicação.
+`pnpm check` e `pnpm build:static` passaram. O HTML de produção contém os seis destinos exatos, abertura segura em nova aba e textos disponíveis sem JavaScript. Capturas desktop em 1536 × 1024, notebook em 1280 × 800 e mobile em 390 × 844 conferidas; sobreposição da frase direita corrigida e notebook compactado para preservar rodapé na primeira dobra. Na prévia pública, as quatro imagens decorativas estão carregadas e os seis links estão presentes. O símbolo oficial Live Pix foi derivado do SVG oficial https://static.livepix.gg/images/logo-white.svg e reduzido ao ícone quadrado monocromático. Os recursos rasterizados foram gerados separadamente e os controles são HTML real. Canonical e og:url não são inventados: aguardar domínio público configurado pela publicação.
+
+
+Ajuste pedido em 4 nov. 2026 concluído: rosas agora flutuam em ciclos de 10–12 s; correntes oscilam em 13–15 s; coroa em 7 s; corações pulsam em 4,5 s; órbita muda o brilho em 6 s; livros e estrelas têm movimento ambiental ligeiramente mais ativo. Verificado no DOM do Preview, incluindo a regra prefers-reduced-motion.
