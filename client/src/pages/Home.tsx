@@ -1,24 +1,34 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { Heart, OrnamentalRule, Sparkle } from "../components/GothicOrnaments";
+import DecorativeScene from "../components/DecorativeScene";
+import SocialLinkCard from "../components/SocialLinkCard";
+import { socialLinks } from "../lib/socialLinks";
+import { assets } from "../lib/assets";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+    <div className="gothic-world">
+      <a className="skip-link" href="#meus-links">Ir para meus links</a>
+      <DecorativeScene />
+      <main className="identity-column">
+        <header className="identity-header">
+          <img className="royal-crown" src={assets.crown} width="260" height="174" alt="" fetchPriority="high" />
+          <div className="wordmark-wrap">
+            <div className="emerald-orbit" aria-hidden="true"><Sparkle className="orbit-star" /></div>
+            <h1 className="wordmark"><span>POXA</span><span>FRICK</span></h1>
+            <Heart className="identity-heart" />
+          </div>
+          <p className="essence">MEU UNIVERSO <span aria-hidden="true">•</span> MINHA ESSÊNCIA</p>
+          <OrnamentalRule className="identity-rule" />
+          <p className="identity-subtitle">Criadora de conteúdo <span>•</span> Escritora <span>•</span> Lives</p>
+        </header>
+        <nav className="social-links" id="meus-links" aria-label="Redes sociais, playlist e apoio às lives">
+          {socialLinks.map((link) => <SocialLinkCard key={link.id} link={link} />)}
+        </nav>
+        <footer className="identity-footer">
+          <div className="thanks"><span aria-hidden="true" /> <p>OBRIGADA POR ESTAR AQUI</p> <span aria-hidden="true" /></div>
+          <div className="footer-heart-row"><i aria-hidden="true" /><Heart className="footer-heart" /><i aria-hidden="true" /></div>
+          <p className="mobile-bests">Dentro do círculo, somos Bests. <Heart /></p>
+        </footer>
       </main>
     </div>
   );
