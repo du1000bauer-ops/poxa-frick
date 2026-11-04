@@ -34,8 +34,18 @@
 Ajuste pedido em 4 nov. 2026 concluído: rosas agora flutuam em ciclos de 10–12 s; correntes oscilam em 13–15 s; coroa em 7 s; corações pulsam em 4,5 s; órbita muda o brilho em 6 s; livros e estrelas têm movimento ambiental ligeiramente mais ativo. Verificado no DOM do Preview, incluindo a regra prefers-reduced-motion.
 
 
-## 6. Deploy Vercel com os mesmos visuais e interações — [ ]
+## 6. Deploy Vercel com os mesmos visuais e interações — [x]
 - Na versão publicada na Vercel, preservar a composição, os textos, os seis destinos de links, os ícones, as animações e os layouts desktop/mobile existentes neste projeto.
 - Incluir no repositório GitHub cópias estáticas das três artes geradas atualmente referenciadas por `/manus-storage/` (cenário literário, rosa esmeralda e coroa) e atualizar somente os caminhos para que o deploy externo não dependa do armazenamento Manus.
 - Usar o build estático existente (`pnpm build:static`, saída `dist/public`) e publicar o projeto Vercel a partir da branch `main` do repositório `du1000bauer-ops/poxa-frick`.
 - A versão entregue deve carregar as artes, manter os seis links funcionando e preservar animações e o suporte a `prefers-reduced-motion`.
+
+## Evidência do deploy
+
+`poxa-frick.vercel.app` publica o commit `43eb97c533c023f8c28c00a999c6a6bc2d6d8adc` (estado Vercel `READY`). A página abre sem login, lista os seis links pré-renderizados e as três artes respondem publicamente como `image/webp`.
+
+## 7. Mais realismo e acabamento desktop — [x]
+- Substituir a rosa repetida do lado direito por uma segunda rosa verde-escura realista, em ângulo e composição diferentes da rosa à esquerda.
+- Substituir os livros vetoriais do lado direito por uma arte original em estilo fotográfico: livros antigos de couro com textura, páginas envelhecidas, detalhes metálicos discretos, sombras e luz coerentes com a pilha fotográfica da esquerda.
+- Reduzir um pouco a intensidade dos brilhos verdes e compactar os espaçamentos verticais do desktop para minimizar a rolagem e manter o rodapé visível quando a altura da tela permitir; preservar hierarquia, legibilidade, movimento suave, responsividade e `prefers-reduced-motion`.
+- Manter intactos os textos, os seis destinos e o comportamento seguro dos links enquanto esses ajustes visuais forem aplicados.
