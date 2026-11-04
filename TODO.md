@@ -49,3 +49,9 @@ Ajuste pedido em 4 nov. 2026 concluído: rosas agora flutuam em ciclos de 10–1
 - Substituir os livros vetoriais do lado direito por uma arte original em estilo fotográfico: livros antigos de couro com textura, páginas envelhecidas, detalhes metálicos discretos, sombras e luz coerentes com a pilha fotográfica da esquerda.
 - Reduzir um pouco a intensidade dos brilhos verdes e compactar os espaçamentos verticais do desktop para minimizar a rolagem e manter o rodapé visível quando a altura da tela permitir; preservar hierarquia, legibilidade, movimento suave, responsividade e `prefers-reduced-motion`.
 - Manter intactos os textos, os seis destinos e o comportamento seguro dos links enquanto esses ajustes visuais forem aplicados.
+
+
+## 8. Correntes mais realistas e visíveis — [x]
+- Alterar somente as correntes decorativas, preservando a composição, o conteúdo, os links e as demais animações do site.
+- Dar aos elos aparência metálica tridimensional mais definida, com tons de aço/prata, reflexos, bordas e sombras sutis; aumentar a leitura visual sem parecer plástico ou excessivamente brilhante.
+- Preservar o balanço discreto e a posição das correntes no desktop; em telas móveis, deixá-las perceptíveis nas laterais sem cobrir texto ou botões. Respeitar `prefers-reduced-motion`.

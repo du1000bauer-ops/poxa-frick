@@ -52,7 +52,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .corner-bl { bottom: -1px; left: -1px; transform: scaleY(-1); }
 .corner-br { bottom: -1px; right: -1px; transform: scale(-1); }
 .left-scene, .right-scene { z-index: -1; }
-.chain { position: absolute; width: 94px; height: 450px; transform-origin: 50% 0; filter: drop-shadow(0 5px 7px #000); }
+.chain { position: absolute; width: 94px; height: 450px; transform-origin: 50% 0; filter: drop-shadow(0 4px 5px #000c) drop-shadow(0 0 2px #edf5f166); }
 .chain-left { top: -92px; left: 14%; --chain-angle: 36deg; animation: chain-sway 13s ease-in-out infinite alternate; }
 .chain-right { top: -110px; right: 13%; --chain-angle: -36deg; animation: chain-sway 15s ease-in-out -9s infinite alternate; }
 .left-rose { position: absolute; width: clamp(210px, 23vw, 350px); height: auto; left: 9%; top: 2%; transform: rotate(-21deg); animation: rose-float 10s ease-in-out infinite; filter: drop-shadow(0 8px 16px #000); }
@@ -173,8 +173,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .left-rose { width: 235px; top: 3%; left: -65px; opacity: .36; }
   .literary-scene { width: 310px; bottom: -1%; left: -100px; opacity: .26; }
   .right-rose { width: 300px; right: -130px; bottom: -40px; opacity: .3; }
-  .chain-left { left: 8%; top: -130px; opacity: .5; }
-  .chain-right { right: 8%; top: -130px; opacity: .5; }
+  .chain { width: 82px; height: 390px; }
+  .chain-left { left: 6%; top: -62px; --chain-angle: 24deg; opacity: .72; }
+  .chain-right { right: 6%; top: -62px; --chain-angle: -24deg; opacity: .72; }
   .literary-quote, .live-quote, .bests-signature, .bests-quote { display: none; }
   .wordmark { font-size: 108px; }
   .mobile-bests { display: flex; align-items: center; justify-content: center; margin: 15px 0 0; font-family: "Allura", cursive; color: #90bda5; font-size: 28px; }
@@ -213,9 +214,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .left-rose { width: 190px; left: -90px; top: 1%; opacity: .28; }
   .literary-scene { width: 265px; left: -157px; opacity: .16; bottom: 20px; }
   .right-rose { width: 265px; right: -170px; bottom: -5px; opacity: .24; }
-  .chain { width: 62px; height: 300px; }
-  .chain-left { left: 1%; top: -120px; }
-  .chain-right { right: 0; top: -115px; }
+  .chain { width: 68px; height: 330px; }
+  .chain-left { left: 5%; top: -42px; --chain-angle: 22deg; opacity: .74; }
+  .chain-right { right: 5%; top: -42px; --chain-angle: -22deg; opacity: .74; }
   .star-one { left: 16%; top: 21%; width: 17px; }
   .star-two { right: 9%; top: 14%; width: 21px; }
   .star-three { left: 15%; bottom: 7%; }

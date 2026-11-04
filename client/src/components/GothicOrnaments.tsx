@@ -46,25 +46,43 @@ export function FiligreeCorner({ className }: OrnamentProps) {
   );
 }
 
-/** A vertical strand of eight softly highlighted interlinked metal ovals. */
+/** A vertical strand of eight interwoven steel links with beveled highlights. */
 export function Chain({ className }: OrnamentProps) {
-  const gradientId = `chain-metal-${useId().replace(/:/g, "")}`;
+  const id = useId().replace(/:/g, "");
+  const metalId = `chain-metal-${id}`;
+  const shadowId = `chain-shadow-${id}`;
+  const links = Array.from({ length: 8 }, (_, index) => ({
+    index,
+    cy: 32 + index * 52,
+    rx: index % 2 === 0 ? 17 : 10,
+  }));
   return (
     <svg aria-hidden="true" focusable="false" className={className} viewBox="0 0 100 460" fill="none">
       <defs>
-        <linearGradient id={gradientId} x1="20" y1="0" x2="81" y2="28" gradientUnits="userSpaceOnUse">
-          <stop stopColor="currentColor" stopOpacity=".48" /><stop offset=".28" stopColor="currentColor" /><stop offset=".52" stopColor="#fff" stopOpacity=".78" /><stop offset=".72" stopColor="currentColor" stopOpacity=".88" /><stop offset="1" stopColor="currentColor" stopOpacity=".38" />
+        <linearGradient id={metalId} x1="14" y1="0" x2="86" y2="42" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#394341" /><stop offset=".13" stopColor="#e7ece8" /><stop offset=".24" stopColor="#78827f" /><stop offset=".39" stopColor="#f8faf7" /><stop offset=".52" stopColor="#626d6a" /><stop offset=".68" stopColor="#dfe5e1" /><stop offset=".83" stopColor="#f5f7f4" /><stop offset="1" stopColor="#333d3a" />
         </linearGradient>
+        <linearGradient id={`${metalId}-inner`} x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+          <stop stopColor="#f8fbf8" /><stop offset=".46" stopColor="#8d9894" /><stop offset="1" stopColor="#313b39" />
+        </linearGradient>
+        <filter id={shadowId} x="-40%" y="-12%" width="180%" height="132%" colorInterpolationFilters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur" />
+          <feOffset in="blur" dx="1.2" dy="2" result="offset-shadow" />
+          <feComponentTransfer in="offset-shadow" result="soft-shadow"><feFuncA type="linear" slope=".68" /></feComponentTransfer>
+          <feMerge><feMergeNode in="soft-shadow" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
       </defs>
-      <g stroke={`url(#${gradientId})`} strokeWidth="5.2">
-        {Array.from({ length: 8 }, (_, index) => (
-          <ellipse key={index} cx="50" cy={32 + index * 52} rx={index % 2 === 0 ? 17 : 10} ry="29" />
-        ))}
+      <g filter={`url(#${shadowId})`} stroke="#030706" strokeWidth="10.5">
+        {links.map(({ index, cy, rx }) => <ellipse key={`shadow-${index}`} cx="50" cy={cy + 1} rx={rx} ry="29" />)}
       </g>
-      <g stroke="currentColor" strokeWidth="1" opacity=".42">
-        {Array.from({ length: 8 }, (_, index) => (
-          <path key={index} d={`M${index % 2 === 0 ? 38 : 43} ${14 + index * 52}c2-5 4-7 8-8`} strokeLinecap="round" />
-        ))}
+      <g stroke={`url(#${metalId})`} strokeLinecap="round">
+        {links.filter(({ index }) => index % 2 === 1).map(({ index, cy, rx }) => <ellipse key={`rear-${index}`} cx="50" cy={cy} rx={rx} ry="29" strokeWidth="7.4" />)}
+        {links.filter(({ index }) => index % 2 === 0).map(({ index, cy, rx }) => <ellipse key={`front-${index}`} cx="50" cy={cy} rx={rx} ry="29" strokeWidth="8.6" />)}
+      </g>
+      <g pointerEvents="none">
+        {links.map(({ index, cy, rx }) => <ellipse key={`bevel-${index}`} cx="50" cy={cy} rx={rx - 2.7} ry="26.1" stroke={`url(#${metalId}-inner)`} strokeWidth="1.25" opacity=".88" />)}
+        {links.map(({ index, cy, rx }) => <path key={`shine-${index}`} d={`M${50 - rx + 1} ${cy - 7}c1-12 8-19 16-20`} stroke="#fbfdfb" strokeWidth="1.7" strokeLinecap="round" opacity=".9" />)}
+        {links.map(({ index, cy, rx }) => <path key={`edge-${index}`} d={`M${50 + rx - 1} ${cy + 3}c2 12-5 22-15 25`} stroke="#28312f" strokeWidth="2.1" strokeLinecap="round" opacity=".8" />)}
       </g>
     </svg>
   );
